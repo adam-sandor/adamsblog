@@ -1,0 +1,27 @@
+{{ partial "layout_begin.html" . }}
+<div class="row">
+  <div class="col-sm-8">
+    <h1>The blog of Adam</h1>
+    <p>Welcome... I'm a software developer wandering in the world of banking for many years in roles of Java developer and
+    Architect. Recently I decided to train myself in the arts of infrastructure automation and pursue a more technology
+    focused carrier at <a href="http://container-solutions.com">Container Solutions</a>. That's me on the right filtering
+  deep insights and profound wisdom straight from the fresh Slovenian air.</p>
+  </div>
+  <div class="col-sm-4">
+    {{ partial "sidebar.html" . }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    {{ range first 10 .Site.Pages.ByDate.Reverse }}
+      {{ if eq .Type "post" }}
+        {{ .Render "summary"}}
+      {{ end }}
+    {{ end }}
+    <hr>
+    <div class="home-read-more">
+      <a href="{{ .Site.BaseURL }}post" class="btn btn-primary btn-block btn-lg">View All {{ len (where .Site.Pages "Section" "post") }} Articles →</a>
+    </div>
+  </div>
+</div>
+{{ partial "layout_end.html" . }}

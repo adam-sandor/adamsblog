@@ -1,0 +1,19 @@
+
+{{ if or .Site.Params.gravatar_id .Site.Params.author_name  }}
+<h3>
+  {{ .Site.Params.author_name }}
+</h3>
+
+<p>
+  <div class="media">
+    <img src="{{ $.Site.BaseURL }}images/adam_hr_1.jpg" alt="{{ .Site.Params.author_name }}" class="pull-left">
+  </div>
+</p>
+{{ end }}
+
+{{ if .Site.Params.twitter_username }}
+<p><a href="https://twitter.com/{{ .Site.Params.twitter_username }}" class="twitter-follow-button" data-show-screen-name="false" data-show-count="true" data-dnt="true" data-size="large">Follow @{{ .Site.Params.twitter_username }}</a></p>
+{{ end }}
+{{ if .Site.Params.github_username}}
+<p><a href="https://github.com/{{ .Site.Params.github_username}}" class="btn btn-info btn-sm" role="button">Github</a>
+{{ end }}

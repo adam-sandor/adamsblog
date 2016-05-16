@@ -1,0 +1,16 @@
+baseurl = "http://adamsblog.xyz/"
+languageCode = "en-us"
+title = "Adam's blog"
+theme = "shiory"
+
+disqusShortname = "adamsblogxyz"
+
+googleAnalytics = "UA-77780519-1"
+
+PygmentsCodeFences = true
+pygmentsstyle = "friendly"
+
+[params]
+author_name = "Ádám Sándor"
+twitter_username = "AdamSandor2"
+github_username="adam-sandor"
